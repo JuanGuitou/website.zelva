@@ -58,7 +58,9 @@ Esto es lo que condiciona el plan (todo verificado en docs oficiales, no supuest
 3. **El `fork` de themes vía CLI todavía no está habilitado** (`@tiendanube/cli` responde
    "forking isn't enabled yet"; además es solo para Ipanema). El único camino de código real
    hoy sigue siendo FTP.
-4. **Tiendanube no tiene blog nativo.** Afecta al recetario (§7).
+4. ~~**Tiendanube no tiene blog nativo.**~~ **CORREGIDO 2026-07-29:** sí tiene. El admin
+   muestra `Tienda online > Blog`. La pantalla falló al cargar en dos intentos, así que
+   queda por confirmar si funciona en plan Inicial. Ver `migracion/ESTADO-TIENDA.md`.
 5. **Los formularios custom no son nativos** — Google Forms embebido o app tipo POWR.
 6. **La carga masiva por CSV es solo de planes pagos.** Con 6 SKUs es irrelevante: carga manual.
 7. **A favor:** Ipanema trae nativo casi todo lo que usa el home — barra de anuncios, banners,
@@ -111,6 +113,26 @@ Ninguna la puedo resolver yo. Van primero porque varias tienen lead time.
 - ¿Ya existe una tienda en Tiendanube o la creamos? Si la creamos, arrancamos en **Inicial
   (gratis)** para construir y pasamos a **Esencial ($26.999)** al lanzar.
 - Que Juan me dé acceso de colaborador al admin.
+
+---
+
+## 2 bis. Cómo se ejecuta el trabajo (definido 2026-07-29)
+
+Tres vías, según lo que cubre cada una:
+
+| Vía | Para qué | Estado |
+|---|---|---|
+| **Admin MCP oficial** (`admin-mcp.tiendanube.com`) | Catálogo: productos, variantes, categorías, stock, precios | Configurado en Claude Code, **falta autorizar OAuth** |
+| **Playwright** (`migracion/automation/`) | Lo que el MCP no cubre: páginas de contenido, editor de diseño | ✅ Funcionando, login resuelto |
+| **A mano, con paso a paso** | Pagos, envíos, plan | Pendiente |
+
+El MCP no requiere ser partner ni crear una app — eso deja obsoleto el plan original de
+armar una app OAuth propia.
+
+**La cuenta de Tiendanube tiene contraseña propia además del SSO de Google**, justamente
+para no automatizar nunca el login de Google (detecta el navegador controlado y puede
+bloquear la cuenta). Las credenciales viven fuera del repo; ver
+`migracion/automation/README.md`.
 
 ---
 

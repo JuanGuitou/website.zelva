@@ -1,0 +1,6 @@
+# Credenciales — este repo es PÚBLICO, nada de esto puede commitearse
+*creds*
+*.env
+.env*
+tiendanube-creds*
+node_modules

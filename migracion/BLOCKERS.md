@@ -7,19 +7,20 @@ Estado al 2026-07-29. Marcá con `[x]` a medida que se resuelven.
 
 ---
 
-## 1. Cuenta de Tiendanube — BLOQUEA TODO LO DEMÁS
+## 1. Cuenta de Tiendanube — ✅ RESUELTO (2026-07-29)
 
-- [ ] ¿Ya existe una tienda en Tiendanube o hay que crearla?
-- [ ] Acceso de colaborador al admin para poder armarla.
-- [ ] Plan: la recomendación es arrancar en **Inicial (gratis)** para construir y
-      pasar a **Esencial ($26.999/mes)** al lanzar.
+- [x] La tienda existe: `tiendadejuanguitou.mitiendanube.com`
+- [x] Acceso al admin, con contraseña propia (no Google SSO) para poder automatizar
+- [x] Plan **Inicial (gratis)**, como estaba recomendado. Pasar a **Esencial ($26.999/mes)**
+      al lanzar.
 
-Sin esto no se puede avanzar más allá de lo que ya está en esta carpeta.
+Estado relevado en `ESTADO-TIENDA.md`: la tienda está en cero — 0 productos, 0 categorías,
+theme **Morelia** (hay que cambiar a Ipanema, que está disponible).
 
-**Nota sobre la carga masiva:** el `catalogo.csv` de acá está en el formato oficial de
-importación, pero **la importación por CSV es solo de planes pagos**. En plan Inicial hay
-que cargar los 6 productos a mano — con 6 SKUs es media hora, no es un problema real.
-El CSV sirve igual como fuente de verdad del catálogo.
+**Pendiente acá:** autorizar el **Admin MCP** (`https://admin-mcp.tiendanube.com`), ya
+configurado en Claude Code. Con eso el catálogo se carga por MCP y el `catalogo.csv` queda
+como fuente de verdad versionada, sin depender de que la importación CSV esté habilitada
+en el plan Inicial.
 
 ---
 
@@ -75,6 +76,8 @@ dice el prototipo.
 - [ ] Razón social, CUIT y domicilio fiscal del vendedor.
 - [ ] **Data Fiscal de AFIP** — obligatorio en el footer. El prototipo ya tiene el lugar
       reservado, pero con un `href="#"` vacío.
+      → Ya ubiqué dónde se carga: **Configuración > Códigos externos > AFIP > "Código de
+      Data Fiscal"**. Es un campo dedicado, no hay que tocar el theme. Solo falta el código.
 - [ ] **Botón de arrepentimiento** — obligatorio para e-commerce en Argentina.
       Tiendanube lo soporta de forma nativa, hay que activarlo y completarlo.
 - [ ] Términos y condiciones.

@@ -14,7 +14,9 @@ pagos, stock ni formularios que envíen nada. Lo que se migra es el **contenido*
 1. **`../PLAN-MIGRACION-TIENDANUBE.md`** — el plan completo: estrategia, fases, restricciones
    de la plataforma y por qué se eligió cada camino.
 2. **`BLOCKERS.md`** — 👈 **empezar acá.** Todo lo que falta definir y frena el lanzamiento.
-3. **`checklist-armado.md`** — los pasos concretos en el admin, en orden.
+3. **`ESTADO-TIENDA.md`** — qué hay hoy en el admin, relevado directo. Incluye tres
+   correcciones a lo que el plan daba por cierto.
+4. **`checklist-armado.md`** — los pasos concretos en el admin, en orden.
 
 ---
 
@@ -23,6 +25,8 @@ pagos, stock ni formularios que envíen nada. Lo que se migra es el **contenido*
 | Archivo | Qué es |
 |---|---|
 | `BLOCKERS.md` | Lo que no puedo resolver yo y bloquea el lanzamiento |
+| `ESTADO-TIENDA.md` | Estado real del admin, relevado el 2026-07-29 |
+| `automation/` | Scripts de Playwright para el admin ⚠️ leer el README de ahí antes de correrlos |
 | `checklist-armado.md` | Paso a paso del armado en el admin |
 | `catalogo.csv` | Los 6 SKUs en el formato de carga masiva de Tiendanube |
 | `identidad-visual.md` | Paleta, tipografías y componentes del prototipo |
