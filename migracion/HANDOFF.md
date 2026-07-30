@@ -111,27 +111,62 @@ Si alguna se filtra: **rotarla**. Borrar el commit no alcanza, el historial qued
 | 5 · Handoff al mantenedor | ⛔ Última |
 | v2 · Recetario | 📋 Contenido extraído, fuera del MVP |
 
-**La tienda está en cero:** plan Inicial (gratis), 0 productos, 0 categorías, theme
-**Morelia** (hay que pasar a Ipanema, que está disponible).
+🚨 **La tienda YA NO está en cero.** Al 2026-07-30 hay **4 productos cargados** por alguien
+del lado de Juan, con datos que **no coinciden** con `catalogo.csv`. Antes de crear nada,
+leé la sección 5. Plan Inicial, 0 categorías, theme **Morelia**.
 
 ---
 
-## 5. Tu próxima tarea
+## 5. Tu próxima tarea: RECONCILIAR, no cargar
 
-**Cargar el catálogo por MCP.** No depende de ningún blocker abierto.
+🚨 **No corras una carga masiva.** Crearías duplicados.
 
-Fuente de verdad: `migracion/catalogo.csv`. Contenido: 3 botellas + 3 kits = 6 SKUs.
+Entre el 29 y el 30 de julio alguien del lado de Juan cargó 4 productos con datos reales
+(precios y copy oficial de ISH). Eso convierte a `catalogo.csv` en **desactualizado**:
+fue extraído del prototipo, que era una maqueta con precios placeholder.
 
-1. Crear categorías: **Gin**, **Ron**, **Espumante**, **Kits y regalos**.
-   **Nada más.** El prototipo listaba 12 categorías con "· pronto" (Tequila, Whisky,
-   Vermut…) — eso era un recurso de diseño. Una categoría vacía en Tiendanube se ve como
-   una categoría vacía.
-2. Categorías secundarias para las ocasiones: Para regalar · Para tu bar en casa ·
-   Para eventos · Sin azúcar.
-3. Cargar los 6 productos. **El Kit Regalo lleva variante** `Botella` con valores
-   Gin / Ron / Espumante — es el *"1 botella a elección"* del prototipo.
-4. Subir imágenes desde `migracion/assets/`: `producto-*.jpg` como principal,
-   `ambiente-*.jpg` como secundaria.
+### Qué hay en la tienda hoy
+
+| Producto | Precio | ¿Está en catalogo.csv? |
+|---|---|---|
+| ISH London Botanical | $49.000 | Sí, pero a $45.000 |
+| Caribbean Spiced Spirit | $49.000 | Sí, como "ISH Caribbean Spiced" |
+| ISH Sparkling White | $49.000 | Sí, pero a $45.000 |
+| **ISH Sparkling Rosé** | $49.000 | **No. No existe en el prototipo** |
+
+Ninguno tiene categoría, imágenes ni variantes. **No hay kits.**
+
+### Diferencias a resolver con el usuario
+
+1. **Precio real: $49.000, no $45.000.** Cambia el descuento por transferencia
+   (`BLOCKERS.md` §3) y todos los precios de los kits. **Preguntar antes de tocar.**
+2. **Sparkling Rosé es un producto nuevo.** No hay copy, ni foto, ni recetas para él en
+   `migracion/contenido/`. Hay que pedírselos.
+3. **Naming inconsistente:** tres empiezan con "ISH", el ron es "Caribbean Spiced Spirit".
+4. **Las descripciones cargadas son las oficiales de ISH**, no las que se extrajeron del
+   prototipo. Las de la tienda son mejores: son de la marca. Descartar las del CSV.
+5. **`promotional_price` en 0,00** en Sparkling White, ausente en otros. Revisar que no
+   rompa nada.
+
+### Qué sí podés hacer sin esperar
+
+- **Crear las categorías** (no hay ninguna): **Gin**, **Ron**, **Espumante**,
+  **Kits y regalos**. **Nada más.** El prototipo listaba 12 con "· pronto"
+  (Tequila, Whisky, Vermut…) — era un recurso de diseño. Una categoría vacía en
+  Tiendanube se ve como una categoría vacía.
+  ⚠️ Ojo: con el Rosé, "Espumante" pasa a tener 2 productos.
+- **Categorías secundarias** para las ocasiones: Para regalar · Para tu bar en casa ·
+  Para eventos · Sin azúcar.
+- **Asignar los 4 productos existentes** a sus categorías.
+- **Subir imágenes** desde `migracion/assets/`: `producto-*.jpg` como principal,
+  `ambiente-*.jpg` como secundaria. ⚠️ **No hay imagen para el Rosé.**
+
+### Los kits siguen pendientes
+
+Los 3 kits (Gin Tonic, Bar en Casa, Regalo) no están cargados. Sus precios en el CSV
+salen del prototipo y asumen botellas a $45.000 — **recalcularlos con el usuario antes**.
+El **Kit Regalo lleva variante** `Botella` (Gin / Ron / Espumante), y ahora habría que
+decidir si el Rosé entra como cuarta opción.
 
 **Dejá vacíos a propósito, y decilo al reportar:**
 

@@ -13,15 +13,28 @@ Esto es observación directa, no supuestos.
 | | Estado |
 |---|---|
 | **Plan** | **Inicial (gratis)** — el admin muestra *"Recursos limitados · Subí de plan y explorá todas las funcionalidades por 7 días gratis"* |
-| **Productos** | **0** — pantalla vacía, *"Subí tus productos"* |
+| **Productos** | **4** al 2026-07-30 (eran 0 el 29). Los cargó alguien del lado de Juan |
 | **Categorías** | Ninguna |
 | **Theme actual** | **Morelia**, no Ipanema |
 | **Theme borrador** | Otro Morelia, última edición 2 jul |
 | **Ipanema** | **Disponible** — el panel de Diseño ofrece *"Probar Ipanema"* |
 | **Logo** | Sin subir |
 
-La tienda está **en cero**. No hay nada que preservar ni que migrar por encima: se arma
-desde el principio.
+⚠️ **Cambió entre el 29 y el 30.** El 29 la tienda estaba en cero. El 30 aparecieron
+**4 productos** cargados por alguien del lado de Juan, con **precio $49.000** y las
+descripciones oficiales de ISH.
+
+Eso deja `catalogo.csv` **desactualizado**: fue extraído del prototipo, que era una maqueta
+con precios placeholder ($45.000). El trabajo pasa de *cargar* a *reconciliar* —
+ver `HANDOFF.md` §5.
+
+**Lo cargado:** ISH London Botanical · Caribbean Spiced Spirit · ISH Sparkling White ·
+**ISH Sparkling Rosé** (este último **no existe en el prototipo**: no hay copy, ni foto,
+ni recetas para él).
+
+**Lo que falta:** categorías (0), imágenes, variantes y los 3 kits.
+
+**Subdominio:** ahora es `zelva.mitiendanube.com` (era `tiendadejuanguitou`).
 
 ---
 
