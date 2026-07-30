@@ -11,6 +11,8 @@ pagos, stock ni formularios que envíen nada. Lo que se migra es el **contenido*
 
 ## Por dónde empezar
 
+0. **`HANDOFF.md`** — 👈 **si arrancás en frío, empezá por acá.** Contexto, accesos,
+   próxima tarea, decisiones ya tomadas y trampas conocidas.
 1. **`../PLAN-MIGRACION-TIENDANUBE.md`** — el plan completo: estrategia, fases, restricciones
    de la plataforma y por qué se eligió cada camino.
 2. **`BLOCKERS.md`** — 👈 **empezar acá.** Todo lo que falta definir y frena el lanzamiento.
@@ -24,6 +26,7 @@ pagos, stock ni formularios que envíen nada. Lo que se migra es el **contenido*
 
 | Archivo | Qué es |
 |---|---|
+| `HANDOFF.md` | Puesta al día para un agente que arranca en frío |
 | `BLOCKERS.md` | Lo que no puedo resolver yo y bloquea el lanzamiento |
 | `ESTADO-TIENDA.md` | Estado real del admin, relevado el 2026-07-29 |
 | `automation/` | Scripts de Playwright para el admin ⚠️ leer el README de ahí antes de correrlos |
