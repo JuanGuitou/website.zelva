@@ -5,9 +5,25 @@ import fs from 'node:fs';
 
 export const STORE = process.env.TN_STORE || 'tiendadejuanguitou.mitiendanube.com';
 
-export function leerCreds(path = process.env.TN_CREDS || '/tmp/tiendanube') {
-  const [email, password] = fs.readFileSync(path, 'utf8').trim().split('/').map(s => s.trim());
-  if (!email || !password) throw new Error(`credenciales ilegibles en ${path}`);
+// Ubicaciones por orden de preferencia. ~/.tiendanube-creds primero: /tmp se
+// limpia al reiniciar la máquina y ya nos dejó sin credenciales una vez.
+const RUTAS_CREDS = [
+  process.env.TN_CREDS,
+  `${process.env.HOME}/.tiendanube-creds`,
+  '/tmp/tiendanube',
+].filter(Boolean);
+
+export function leerCreds(path = null) {
+  const candidatas = path ? [path] : RUTAS_CREDS;
+  const encontrada = candidatas.find(p => { try { return fs.statSync(p).isFile(); } catch { return false; } });
+  if (!encontrada) {
+    throw new Error(
+      `no encontré credenciales. Probé: ${candidatas.join(', ')}\n` +
+      `Creá el archivo con:  echo 'email / password' > ~/.tiendanube-creds && chmod 600 ~/.tiendanube-creds`
+    );
+  }
+  const [email, password] = fs.readFileSync(encontrada, 'utf8').trim().split('/').map(s => s.trim());
+  if (!email || !password) throw new Error(`credenciales ilegibles en ${encontrada}`);
   return { email, password };
 }
 

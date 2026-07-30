@@ -34,7 +34,14 @@ ni recetas para él).
 
 **Lo que falta:** categorías (0), imágenes, variantes y los 3 kits.
 
-**Subdominio:** ahora es `zelva.mitiendanube.com` (era `tiendadejuanguitou`).
+**Subdominio:** ahora es `zelva.mitiendanube.com`. El viejo `tiendadejuanguitou` **sigue
+resolviendo al mismo admin** — es una sola tienda (id 7919099), no dos.
+
+⚠️ **El storefront público muestra contenido demo de Morelia**, no el catálogo real: la home
+es una tienda de ropa de ejemplo y el listado devuelve 27 "Producto de ejemplo". Los 4
+productos reales están cargados y publicados (verificado por MCP: 0 despublicados). **Sin
+diagnosticar todavía** — probablemente el theme sea la demo sin configurar, pero no está
+confirmado.
 
 ---
 

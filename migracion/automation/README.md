@@ -15,10 +15,12 @@ Los scripts leen usuario y contraseña de un archivo **fuera del repo**:
 # formato: una línea, "email / password"
 echo 'tu@email.com / tu-password' > ~/.tiendanube-creds
 chmod 600 ~/.tiendanube-creds
-export TN_CREDS=~/.tiendanube-creds
 ```
 
-Por defecto busca en `/tmp/tiendanube`. `TN_CREDS` lo sobreescribe.
+Se busca en este orden: `$TN_CREDS` → `~/.tiendanube-creds` → `/tmp/tiendanube`.
+
+**No uses `/tmp`.** Se limpia al reiniciar la máquina y ya dejó el proyecto sin credenciales
+una vez, a mitad de trabajo.
 
 Si alguna vez una credencial termina commiteada: **rotarla**, no basta con borrar el commit.
 El repo es público y el historial queda.
