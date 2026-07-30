@@ -15,7 +15,7 @@ pagos, stock ni formularios que envíen nada. Lo que se migra es el **contenido*
    próxima tarea, decisiones ya tomadas y trampas conocidas.
 1. **`../PLAN-MIGRACION-TIENDANUBE.md`** — el plan completo: estrategia, fases, restricciones
    de la plataforma y por qué se eligió cada camino.
-2. **`BLOCKERS.md`** — 👈 **empezar acá.** Todo lo que falta definir y frena el lanzamiento.
+2. **`BLOCKERS.md`** — todo lo que falta definir y frena el lanzamiento.
 3. **`ESTADO-TIENDA.md`** — qué hay hoy en el admin, relevado directo. Incluye tres
    correcciones a lo que el plan daba por cierto.
 4. **`checklist-armado.md`** — los pasos concretos en el admin, en orden.
