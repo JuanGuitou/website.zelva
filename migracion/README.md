@@ -27,11 +27,12 @@ pagos, stock ni formularios que envíen nada. Lo que se migra es el **contenido*
 | Archivo | Qué es |
 |---|---|
 | `HANDOFF.md` | Puesta al día para un agente que arranca en frío |
+| `CATALOGO.md` | **Estado canónico del catálogo.** Reemplaza a `catalogo.csv` |
 | `BLOCKERS.md` | Lo que no puedo resolver yo y bloquea el lanzamiento |
 | `ESTADO-TIENDA.md` | Estado real del admin, relevado el 2026-07-29 |
 | `automation/` | Scripts de Playwright para el admin ⚠️ leer el README de ahí antes de correrlos |
 | `checklist-armado.md` | Paso a paso del armado en el admin |
-| `catalogo.csv` | Los 6 SKUs en el formato de carga masiva de Tiendanube |
+| `catalogo.csv` | ⚠️ **Obsoleto** — precios del prototipo. Se conserva como referencia histórica. Ver `CATALOGO.md` |
 | `identidad-visual.md` | Paleta, tipografías y componentes del prototipo |
 | `MANTENIMIENTO.md` | Guía para quien mantenga la tienda *(se completa en Fase 5)* |
 | `contenido/` | Copy de cada página, listo para pegar |

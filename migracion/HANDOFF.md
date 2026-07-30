@@ -117,7 +117,15 @@ leé la sección 5. Plan Inicial, 0 categorías, theme **Morelia**.
 
 ---
 
-## 5. Tu próxima tarea: RECONCILIAR, no cargar
+## 5. Tu próxima tarea
+
+✅ **La reconciliación de catálogo ya se hizo el 2026-07-30.** Estado completo y
+actualizado en **`CATALOGO.md`** — leelo, reemplaza a `catalogo.csv`, que quedó obsoleto.
+
+Lo que queda: **kits** (falta decisión de precio), **stock**, **peso/dimensiones**,
+**imagen del Rosé**, y todo lo de diseño/páginas (bloqueado, ver abajo).
+
+### Contexto de cómo se llegó acá
 
 🚨 **No corras una carga masiva.** Crearías duplicados.
 

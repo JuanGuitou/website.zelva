@@ -40,15 +40,20 @@ la página de contacto y los emails automáticos de la tienda.
 
 ## 3. Precios: el descuento por transferencia rompe con los kits
 
+⚠️ **ACTUALIZADO 2026-07-30.** Juan cargó las botellas a **$49.000**, no a los $45.000 del
+prototipo. Los números de abajo se recalcularon sobre el precio real.
+
 **El problema.** En Tiendanube el descuento por medio de pago se configura **a nivel
-tienda**: un único porcentaje global. En el prototipo:
+tienda**: un único porcentaje global.
 
-- Las botellas tienen doble precio: $45.000 tarjeta / $40.000 transferencia → **11,11% off**.
-- Los kits tienen **un solo precio** ($52.000 / $128.000 / $58.000), sin precio de transferencia.
+- Las botellas hoy están a **$49.000**, sin precio de transferencia definido. Si se mantiene
+  el 11,11% del prototipo, quedarían en **$43.556**. **Hay que decidirlo de nuevo sobre el
+  precio nuevo** — el par $45.000/$40.000 era de la maqueta.
+- Los kits **no están cargados todavía**. Precios propuestos en `CATALOGO.md`.
 
-Si configuro el 11,11% global, **los kits también se descuentan**, y quedarían en $46.222 /
-$113.778 / $51.556 pagando por transferencia. Puede que sea lo que quieras, pero no es lo que
-dice el prototipo.
+Si se configura un descuento global, **los kits también se descuentan**. Sobre los precios
+propuestos ($56.900 / $139.500 / $63.500), un 11,11% los dejaría en $50.578 / $124.000 /
+$56.444 pagando por transferencia.
 
 **Decidir una de estas:**
 
@@ -64,8 +69,9 @@ dice el prototipo.
 
 **Además:**
 
-- [ ] Confirmar que los tres precios de $45.000 son reales y actuales (los tres productos
-      tienen exactamente el mismo precio en el prototipo, lo cual puede ser un placeholder).
+- [x] ~~Confirmar que los precios de $45.000 son reales~~ — **no lo eran**. El precio real
+      es **$49.000**, cargado por Juan el 2026-07-30.
+- [ ] Definir el **precio de transferencia** sobre $49.000.
 - [ ] **Cuotas:** el prototipo promete "hasta 3 cuotas sin interés". Ese costo lo absorbe el
       vendedor. Confirmar que se banca.
 
