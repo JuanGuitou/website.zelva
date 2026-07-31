@@ -34,6 +34,18 @@ const TEXTOS = {
   'theme[i18n][welcome_text][es]': 'Otra forma de brindar, la misma forma de disfrutar.',
   'theme[i18n][welcome_button][es]': 'Ver botellas',
   'theme[i18n][welcome_link][es]': '/productos/',
+  // Barra de 4 beneficios, transcrita del prototipo. Sin esto Morelia muestra
+  // el bloque demo vacío. Los iconos disponibles son:
+  // image | shipping | card | security | returns | whatsapp | promotions | cash
+  'theme[i18n][banner_services_01_title][es]': 'Marcas premiadas',
+  'theme[i18n][banner_services_01_description][es]': 'Reconocidas internacionalmente.',
+  'theme[i18n][banner_services_02_title][es]': 'Importación oficial',
+  'theme[i18n][banner_services_02_description][es]': 'Directo del productor.',
+  'theme[i18n][banner_services_03_title][es]': 'Envíos a todo el país',
+  'theme[i18n][banner_services_03_description][es]': 'Llega a tu puerta.',
+  'theme[i18n][banner_services_04_title][es]': 'Sabor real, cero resaca',
+  'theme[i18n][banner_services_04_description][es]': 'Complejidad sin alcohol.',
+
   'theme[i18n][home_news_title][es]': 'Sumate al mundo ZELVA',
   'theme[i18n][home_news_text][es]':
     'Recetas, lanzamientos y novedades de la categoría sin alcohol.',
@@ -43,6 +55,14 @@ const TEXTOS = {
 const COLORES_EXTRA = {
   'color-home_news_background_color': '#EFE0B8',
   'color-home_news_foreground_color': '#1E2A1E',
+};
+
+// Iconos de la barra de beneficios, para que acompañen al texto de arriba.
+const SELECTS = {
+  'theme[text][banner_services_01_icon]': 'security',
+  'theme[text][banner_services_02_icon]': 'promotions',
+  'theme[text][banner_services_03_icon]': 'shipping',
+  'theme[text][banner_services_04_icon]': 'returns',
 };
 
 const { browser, page } = await login();
@@ -58,12 +78,17 @@ await page.waitForTimeout(12000);
 // La vuelta: los campos viven en un <form> real con ~238 inputs que hace POST.
 // Seteamos los valores, sacamos el disabled del submit y dejamos que el form
 // se mande con todo lo demás intacto.
-const res = await page.evaluate(({ colores, extra, textos, css }) => {
+const res = await page.evaluate(({ colores, extra, selects, textos, css }) => {
   const out = { seteados: [], faltantes: [] };
 
   for (const [id, valor] of Object.entries({ ...colores, ...extra })) {
     const el = document.getElementById(id);
     if (el) { el.value = valor; out.seteados.push(id); } else out.faltantes.push(id);
+  }
+
+  for (const [name, valor] of Object.entries(selects)) {
+    const el = document.querySelector(`[name="${name}"]`);
+    if (el) { el.value = valor; out.seteados.push(name.slice(12, -1)); } else out.faltantes.push(name);
   }
 
   for (const [name, valor] of Object.entries(textos)) {
@@ -77,7 +102,7 @@ const res = await page.evaluate(({ colores, extra, textos, css }) => {
   const btn = document.querySelector('.js-save-draft-btn');
   if (btn) { btn.disabled = false; btn.removeAttribute('disabled'); out.botonHabilitado = true; }
   return out;
-}, { colores: COLORES, extra: COLORES_EXTRA, textos: TEXTOS, css: CSS });
+}, { colores: COLORES, extra: COLORES_EXTRA, selects: SELECTS, textos: TEXTOS, css: CSS });
 
 console.log('seteados:', res.seteados.join(', '));
 if (res.faltantes.length) console.log('FALTANTES:', res.faltantes.join(', '));
