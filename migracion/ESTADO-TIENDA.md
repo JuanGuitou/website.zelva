@@ -34,14 +34,28 @@ ni recetas para él).
 
 **Lo que falta:** categorías (0), imágenes, variantes y los 3 kits.
 
-**Subdominio:** ahora es `zelva.mitiendanube.com`. El viejo `tiendadejuanguitou` **sigue
-resolviendo al mismo admin** — es una sola tienda (id 7919099), no dos.
+### El dominio: `zelva.mitiendanube.com` NO es esta tienda
 
-⚠️ **El storefront público muestra contenido demo de Morelia**, no el catálogo real: la home
-es una tienda de ropa de ejemplo y el listado devuelve 27 "Producto de ejemplo". Los 4
-productos reales están cargados y publicados (verificado por MCP: 0 despublicados). **Sin
-diagnosticar todavía** — probablemente el theme sea la demo sin configurar, pero no está
-confirmado.
+Me confundí dos veces con esto. Queda zanjado con evidencia del admin:
+
+**Configuración → Dominios de esta tienda muestra un solo dominio:
+`tiendadejuanguitou.mitiendanube.com`.** No hay ningún `zelva` configurado acá.
+
+`zelva.mitiendanube.com` existe, se llama "ZELVA", y sirve la demo de Morelia
+(27 "Producto de ejemplo", cero productos ISH). **Es una tienda distinta.**
+
+Prueba concluyente: la página *Nosotros* creada el 2026-07-30 aparece en
+`tiendadejuanguitou` y **no** en `zelva`. Un caché no explica eso.
+
+**De dónde salió la confusión:** el MCP arma el campo `product_url` con el **nombre** de la
+tienda ("Zelva"), no con su dominio — y encima le falta la barra
+(`https://zelva.mitiendanube.comproductos/...`). Ese campo está roto: **no usarlo como
+fuente de la URL pública.**
+
+⚠️ **Pendiente para Juan:** si él cree que renombró la tienda a `zelva.mitiendanube.com`,
+entonces creó una **segunda tienda** y hay dos. Todo el trabajo (catálogo, categorías, SEO,
+páginas) está en `tiendadejuanguitou`, que es donde apuntan el admin y el MCP, y donde él
+mismo cargó los 4 productos ISH.
 
 ---
 
