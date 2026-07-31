@@ -27,6 +27,8 @@ pagos, stock ni formularios que envíen nada. Lo que se migra es el **contenido*
 | Archivo | Qué es |
 |---|---|
 | `HANDOFF.md` | Puesta al día para un agente que arranca en frío |
+| `LIBERTADES.md` | **Todo lo que se asumió sin confirmar.** Para revisar con Juan |
+| `theme/` | CSS de marca que se carga en el borrador del diseño |
 | `CATALOGO.md` | **Estado canónico del catálogo.** Reemplaza a `catalogo.csv` |
 | `BLOCKERS.md` | Lo que no puedo resolver yo y bloquea el lanzamiento |
 | `ESTADO-TIENDA.md` | Estado real del admin, relevado el 2026-07-29 |
@@ -59,11 +61,14 @@ pagos, stock ni formularios que envíen nada. Lo que se migra es el **contenido*
 | Fase | Estado |
 |---|---|
 | 1 · Extracción de contenido y assets | ✅ Hecho |
-| 2 · Armado de la tienda | ⛔ Bloqueado por `BLOCKERS.md` §1 (acceso al admin) |
-| 3 · Capa de marca (CSS) | ⛔ Depende de la Fase 2 |
-| 4 · Pre-lanzamiento | ⛔ Depende de `BLOCKERS.md` §4 (legales) |
+| 2 · Armado de la tienda | ✅ Catálogo, categorías, SEO y páginas cargados |
+| 3 · Capa de marca | 🟡 Colores, tipografías y hero en **borrador**. Falta iterar |
+| 4 · Pre-lanzamiento | ⛔ Bloqueado por `BLOCKERS.md` §4 (legales) y datos de contacto |
 | 5 · Handoff | ⛔ Depende de la Fase 4 |
 | v2 · Recetario | 📋 Contenido ya extraído, para después del lanzamiento |
+
+**Nada del diseño está publicado.** El catálogo sí está en vivo; el diseño vive en el
+borrador y requiere plan pago para publicarse.
 
 ---
 

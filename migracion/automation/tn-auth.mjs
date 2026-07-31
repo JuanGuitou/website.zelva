@@ -72,7 +72,9 @@ export async function login({ headless = true, creds = leerCreds() } = {}) {
   }
 
   // Verificación real: pedir el dashboard y confirmar que no rebota.
-  await page.goto(`https://${STORE}/admin/dashboard`, { waitUntil: 'networkidle', timeout: 60000 });
+  // domcontentloaded, no networkidle: el admin tiene polling que a veces nunca
+  // deja la red en silencio y hace timeoutear una navegación que ya funcionó.
+  await page.goto(`https://${STORE}/admin/dashboard`, { waitUntil: 'domcontentloaded', timeout: 90000 });
   await page.waitForTimeout(3000);
   if (/\/login/.test(page.url())) throw new Error('sesión no persistió tras el login');
 
@@ -81,7 +83,7 @@ export async function login({ headless = true, creds = leerCreds() } = {}) {
 
 /** Va a una ruta del admin y devuelve el texto visible. */
 export async function visitar(page, ruta, { shot = null, espera = 4000 } = {}) {
-  await page.goto(`https://${STORE}${ruta}`, { waitUntil: 'networkidle', timeout: 60000 });
+  await page.goto(`https://${STORE}${ruta}`, { waitUntil: 'domcontentloaded', timeout: 90000 });
   await page.waitForTimeout(espera);
   if (shot) await page.screenshot({ path: shot, fullPage: true });
   return page.evaluate(() => document.body.innerText.replace(/\n{2,}/g, '\n'));

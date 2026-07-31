@@ -1,0 +1,126 @@
+/* ============================================================
+   ZELVA — capa de marca sobre el theme Morelia
+   Fuente de verdad: migracion/identidad-visual.md
+   Se carga en: Diseño > Editar borrador > Edición avanzada de CSS
+   Aplicar con: node migracion/automation/aplicar-css.mjs
+
+   OJO — el campo de CSS de Tiendanube SANITIZA:
+   - Descarta las variables CSS. Un `color: var(--x)` se borra y queda
+     la regla vacía. Por eso acá va todo en hexadecimal literal.
+   - Verificar siempre el resultado con `aplicar-css.mjs`, que compara
+     lo enviado contra lo que quedó guardado.
+
+   Paleta:
+     crema        #F5E7C6      verde oscuro  #1E2A1E
+     crema oscuro #EFE0B8      verde medio   #3E5B40
+     gin #5B7141  ron #A9631F  espumante #6E9A6B
+   ============================================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;0,6..72,700;1,6..72,400&family=Archivo:wght@400;500;600;700&display=swap');
+
+/* ---------- Base ---------- */
+body {
+  background-color: #F5E7C6;
+  color: #1E2A1E;
+  font-family: 'Archivo', sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+::selection { background-color: #1E2A1E; color: #F5E7C6; }
+
+/* ---------- Tipografía ----------
+   Títulos en Newsreader peso 500, nunca bold: es lo que da el tono
+   editorial del diseño original. */
+h1, h2, h3, h4, .h1, .h2, .h3,
+.section-title, .product-name, .page-title {
+  font-family: 'Newsreader', serif;
+  font-weight: 500;
+}
+
+h1 { line-height: 1.06; }
+
+/* ---------- Enlaces ---------- */
+a { color: #3E5B40; text-decoration: none; }
+a:hover { color: #1E2A1E; }
+
+/* ---------- Botones: pill, uppercase, tracking ----------
+   La firma visual más reconocible del diseño original. */
+.btn, button, input[type="submit"], .button {
+  border-radius: 999px;
+  text-transform: uppercase;
+  font-size: 13px;
+  letter-spacing: 0.08em;
+  font-weight: 600;
+  font-family: 'Archivo', sans-serif;
+  padding: 14px 30px;
+}
+
+.btn-primary, .btn-default, .js-addtocart, .btn-cart {
+  background-color: #1E2A1E;
+  border-color: #1E2A1E;
+  color: #F5E7C6;
+}
+
+.btn-primary:hover, .js-addtocart:hover {
+  background-color: #3E5B40;
+  border-color: #3E5B40;
+}
+
+.btn-secondary, .btn-outline {
+  background-color: transparent;
+  border: 1.5px solid #1E2A1E;
+  color: #1E2A1E;
+}
+
+/* ---------- Encabezado ---------- */
+.header, .navbar, header {
+  background-color: #F5E7C6;
+  border-bottom: 1px solid #E0D3B4;
+}
+
+/* ---------- Tarjetas de producto ---------- */
+.item, .product-item, .card {
+  border-radius: 16px;
+  background-color: transparent;
+}
+
+.item-price, .product-price, .price {
+  font-weight: 600;
+  font-family: 'Archivo', sans-serif;
+}
+
+/* ---------- Formularios ---------- */
+input, textarea, select {
+  border-radius: 10px;
+  border: 1px solid #C4CBC4;
+  font-family: 'Archivo', sans-serif;
+  background-color: #FFFFFF;
+  color: #1E2A1E;
+}
+
+input:focus, textarea:focus, select:focus { border-color: #1E2A1E; }
+
+.newsletter input[type="email"], .newsletter input[type="text"] {
+  border-radius: 999px;
+  background-color: #F5E7C6;
+  padding: 15px 18px;
+}
+
+/* ---------- Pie de página ---------- */
+footer, .footer {
+  background-color: #1E2A1E;
+  color: #F5E7C6;
+}
+
+footer a, .footer a { color: #F5E7C6; opacity: 0.85; }
+footer a:hover, .footer a:hover { opacity: 1; }
+
+/* ============================================================
+   PENDIENTE — necesita iteración visual contra el prototipo, y
+   varias cosas son estructura (secciones del theme), no color:
+   - Barra de anuncios superior (envíos / cuotas / transferencia)
+   - Hero con texto a la izquierda e imagen a la derecha
+   - Barra verde de 4 beneficios bajo el hero
+   - Acentos por categoría (gin / ron / espumante) en las tarjetas
+   - Botón flotante de WhatsApp con animación de pulso
+   ============================================================ */
