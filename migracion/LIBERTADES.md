@@ -53,20 +53,23 @@ no puede mostrar todos los medios de envío.
 
 ---
 
-## 4. Tres afirmaciones suavizadas
+## 4. Copy: NINGUNA libertad — va tal cual el prototipo
 
-El prototipo afirmaba cosas que no pude verificar. Las suavicé porque publicar un superlativo
-falso es un riesgo concreto:
+Inicialmente suavicé tres afirmaciones del prototipo que no pude verificar. **Fue un error de
+criterio y está revertido** (2026-07-31): editar texto preexistente no es decisión nuestra,
+ni siquiera cuando la afirmación es dudosa.
 
-| Original | Publicado |
-|---|---|
-| "Somos el **primer** marketplace argentino…" | "Somos **un** marketplace argentino…" |
-| "**importando** marcas internacionales" | "**trayendo** marcas internacionales" |
-| "**Primeros en el país**" | "**Marcas que antes no llegaban**" |
+El copy publicado es **exactamente** el de `contenido/nosotros.md`, incluyendo:
 
-Si Juan puede respaldarlas, se restauran: el texto original está en `contenido/nosotros.md`.
+- "Somos el **primer** marketplace argentino…"
+- "**importando** marcas internacionales premiadas"
+- "**Primeros en el país**"
 
-**Dónde se cambia:** Tienda online → Páginas → Nosotros.
+Estas tres siguen **sin verificar** y quedan anotadas en `BLOCKERS.md` §8 para que Juan las
+valide o las reescriba. La decisión es suya, no nuestra.
+
+**Regla para adelante:** el texto que ya existe se transcribe, no se corrige. Si algo parece
+mal, se marca en `BLOCKERS.md` y se avisa — no se edita.
 
 ---
 

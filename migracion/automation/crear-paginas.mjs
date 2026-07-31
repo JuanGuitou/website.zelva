@@ -6,16 +6,17 @@ import { login, STORE } from './tn-auth.mjs';
 
 const DRY = process.argv.includes('--dry');
 
-// NOTA sobre el copy: se suavizaron tres afirmaciones de primacía del prototipo
-// ("primer marketplace argentino", "Primeros en el país", "importando") porque
-// no están validadas y publicarlas es un riesgo. El texto original está en
-// migracion/contenido/nosotros.md. Ver BLOCKERS.md §8.
+// El copy va EXACTAMENTE como está en migracion/contenido/nosotros.md, que es
+// el del prototipo. No se edita texto preexistente: no es decisión nuestra.
+// Las afirmaciones que no pudimos verificar ("primer marketplace argentino",
+// "Primeros en el país", "importando") quedan anotadas en BLOCKERS.md §8 para
+// que Juan las valide o las cambie él.
 const PAGINAS = [
   {
     titulo: 'Nosotros',
     html: `
 <p><strong>Otra forma de tomar, no la ausencia de tomar.</strong></p>
-<p>ZELVA nace de una convicción: elegir sin alcohol no debería ser resignar nada. Somos un marketplace argentino dedicado a las bebidas espirituosas sin alcohol premium, trayendo marcas internacionales premiadas y curándolas una por una.</p>
+<p>ZELVA nace de una convicción: elegir sin alcohol no debería ser resignar nada. Somos el primer marketplace argentino dedicado a las bebidas espirituosas sin alcohol premium, importando marcas internacionales premiadas y curándolas una por una.</p>
 <h2>Por qué "selva"</h2>
 <p>Una selva es abundancia, no restricción. Es un ecosistema vivo, diverso, donde cada especie tiene su lugar. Así pensamos la categoría: un mundo entero por explorar, no una lista de cosas que no podés tener.</p>
 <p>Curamos pocas botellas, muy buenas, para que cada elección valga la pena.</p>
@@ -23,8 +24,8 @@ const PAGINAS = [
 <p>Destilados con cuerpo y complejidad, sin una gota de alcohol.</p>
 <h2>Curaduría extrema</h2>
 <p>Pocos SKUs, elegidos con criterio. Nada de relleno.</p>
-<h2>Marcas que antes no llegaban</h2>
-<p>Traemos a la Argentina marcas que antes no se conseguían.</p>
+<h2>Primeros en el país</h2>
+<p>Traemos a la Argentina marcas que antes no llegaban.</p>
 `.trim(),
   },
   {

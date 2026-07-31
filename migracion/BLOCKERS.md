@@ -166,7 +166,13 @@ Para vender kits hacen falta fotos reales del kit armado.
       duro y verificable: hay que confirmarlo o sacarlo.
 - [ ] **"Fundada en 2018, pionera de la categoría"** — mismo criterio.
 - [ ] **"Primer marketplace argentino dedicado a bebidas sin alcohol premium"** (Nosotros).
-      Afirmación de primacía; si no es defendible, conviene suavizarla.
+      Afirmación de primacía, **hoy publicada en vivo** en `/nosotros`. Sin verificar.
+- [ ] **"importando marcas internacionales premiadas"** (Nosotros) — implica que ZELVA importa
+      directo. Publicado en vivo. Se contradice con §4 si en realidad se revende.
+- [ ] **"Primeros en el país"** (Nosotros) — publicado en vivo. Sin verificar.
+
+Las tres van tal cual el prototipo: **no se edita copy preexistente**, se marca acá y decide
+Juan.
 - [ ] Las 12 categorías del prototipo (Tequila, Whisky, Vermut, Vino, Cerveza…) figuran como
       "· pronto". **No las voy a crear**: una categoría vacía en Tiendanube se ve como una
       categoría vacía, no como una promesa. Confirmar que se lanzan solo Gin / Ron /
