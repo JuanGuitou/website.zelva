@@ -1,0 +1,12 @@
+import { chromium } from '@playwright/test';
+const b = await chromium.launch({ executablePath:'/usr/bin/chromium', headless:true });
+const p = await b.newPage({ viewport:{width:1440,height:1700}, locale:'es-AR' });
+await p.goto('https://tiendadejuanguitou.mitiendanube.com/?preview=true&theme_installation_id=13836885',{waitUntil:'domcontentloaded',timeout:90000});
+await p.waitForTimeout(8000);
+await p.getByText(/^Entendido$/).click({timeout:3000}).catch(()=>{});
+await p.waitForTimeout(1000);
+await p.screenshot({path:'/tmp/fix-home.png'});
+const t = await p.evaluate(()=>document.body.innerText);
+console.log('beneficios presentes:', ['Marcas premiadas','Importación oficial','Envíos a todo el país','Sabor real'].map(x=>`${x}=${t.includes(x)?'si':'NO'}`).join('  '));
+console.log('demo restante:', ['Podés subir imágenes','Testimonios','Usá este texto'].map(x=>`${x}=${t.includes(x)?'SI':'no'}`).join('  '));
+await b.close();

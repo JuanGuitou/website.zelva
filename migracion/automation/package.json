@@ -1,0 +1,12 @@
+{
+  "name": "zelva-tn-automation",
+  "private": true,
+  "type": "module",
+  "description": "Automatización del admin de Tiendanube para la migración de ZELVA",
+  "scripts": {
+    "explorar": "node explorar.mjs"
+  },
+  "dependencies": {
+    "@playwright/test": "^1.59.1"
+  }
+}
