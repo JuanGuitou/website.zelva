@@ -29,12 +29,19 @@ en el plan Inicial.
 Ninguno de estos datos del prototipo es real. Van en el footer, el WhatsApp flotante,
 la página de contacto y los emails automáticos de la tienda.
 
-| Dato | Valor en el prototipo | Necesito |
+⚠️ **ACTUALIZADO 2026-09-03**, verificación externa pasiva de `byzelva.com` (DNS, WHOIS,
+RDAP, CT, y fetch directo de la página — sin login):
+
+| Dato | Valor en el prototipo | Estado real (2026-09-03) |
 |---|---|---|
-| WhatsApp | `5491155555555` | Número real |
-| Email | `hola@zelva.com.ar` | Confirmar que existe y que alguien lo lee |
-| Instagram | `instagram.com/zelva` | Handle real |
-| Dominio | — | ¿`zelva.com.ar` está comprado y a nombre de quién? |
+| WhatsApp | `5491155555555` | **Sigue sin resolver.** No aparece en el HTML público (solo el ícono SVG del theme, sin link activo). Necesito número real. |
+| Email | `hola@zelva.com.ar` | **Resuelto.** `zelva.bebidas@gmail.com`, encontrado en el footer en vivo de `byzelva.com` (ofuscado por Cloudflare, decodificado). No es un email corporativo del dominio propio — no hay MX en `byzelva.com`. |
+| Instagram | `instagram.com/zelva` | **Resuelto.** Handle real: `instagram.com/ByZelva.co`, tomado del HTML en vivo. |
+| Dominio | — | **Resuelto, y no es el que se esperaba.** Juan compró y conectó **`byzelva.com`** (.com, no `.com.ar` como se especulaba acá). Registrado el 2026-09-03 vía Tucows, whois privado (sin titular visible). `www.byzelva.com` hace CNAME a `tiendadejuanguitou.mitiendanube.com` — es la tienda real de este proyecto, confirmado por cookie de sesión con el ID de tienda (`007919099`), `og:site_name: Zelva` y la paleta de marca exacta de `identidad-visual.md` aplicada en vivo. |
+
+**Estado del sitio al 2026-09-03:** todavía con la contraseña de acceso activa
+(pantalla "Estamos renovando la tienda... ¡Volvé en unos días!"), o sea **no publicado al
+público todavía**, aunque el dominio y el hosting ya están conectados y funcionando.
 
 ---
 

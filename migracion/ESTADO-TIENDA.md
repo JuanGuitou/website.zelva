@@ -8,6 +8,38 @@ Esto es observación directa, no supuestos.
 
 ---
 
+## ⚠️ Actualización 2026-09-03 — verificación externa, sin login (Juan avisó que pagó la suscripción)
+
+Verificación pasiva del dominio `byzelva.com` (DNS/WHOIS/RDAP/CT + fetch directo, sin
+credenciales de admin — no había `/tmp/tiendanube` disponible en esta sesión). Cambios
+reales encontrados **desde el último commit de este repo (`fb538b3`, 2026-07-31)**:
+
+1. **El plan se pagó y el borrador de diseño quedó publicado.** El commit `b46a8a8`
+   (2026-07-31) había dejado la capa de marca solo en **borrador**, con la nota explícita
+   de que publicar un theme distinto requiere plan pago. Hoy, en la página pública
+   (sin `?preview=true`), el HTML servido trae la paleta completa (`#F5E7C6` / `#1E2A1E` /
+   `#3E5B40`), la tipografía **Newsreader + Archivo** y los botones *pill* de
+   `migracion/theme/zelva-brand.css` — es decir, **ya está en vivo, no solo en el editor**.
+   Consistente con que Juan avisó que pagó la suscripción.
+2. **El theme sigue siendo Morelia**, no se cambió a Ipanema — el CSS custom se sigue
+   aplicando sobre Morelia, como estaba planeado como paso intermedio.
+3. **La tienda todavía muestra la pantalla de contraseña** ("Estamos renovando la tienda y
+   está quedando increíble. ¡Volvé en unos días!"). No está publicada al público todavía,
+   aunque el dominio y el diseño sí están listos y conectados.
+4. **Esa misma pantalla de contraseña ya trae pie de página legal**: link de
+   "Botón de arrepentimiento" y de "Defensa de las y los consumidores" (reclamos) — señal de
+   que alguien avanzó sobre `BLOCKERS.md` §4 (legales) desde el 31/7, aunque no se pudo
+   confirmar el alcance completo sin entrar al admin.
+5. **Datos de contacto reales aparecidos en el HTML público**, no en el CSV/repo:
+   email `zelva.bebidas@gmail.com` (ofuscado con Cloudflare, decodificado) e Instagram
+   `instagram.com/ByZelva.co`. Volcado a `BLOCKERS.md` §2.
+6. **No verificable sin admin**: catálogo actual (7 productos al 31/7), stock, centro de
+   distribución, medios de pago activos, WhatsApp flotante. La página de contraseña no deja
+   ver el storefront real. Falta credencial (`/tmp/tiendanube`) para retomar con Playwright
+   o el Admin MCP.
+
+---
+
 ## Qué hay hoy
 
 | | Estado |
