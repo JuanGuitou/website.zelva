@@ -1,225 +1,92 @@
-/* ============================================================
-   ZELVA — capa de marca sobre el theme Morelia
-   Fuente de verdad: migracion/identidad-visual.md
-   Se carga en: Diseño > Editar borrador > Edición avanzada de CSS
-   Aplicar con: node migracion/automation/aplicar-css.mjs
-
-   OJO — el campo de CSS de Tiendanube SANITIZA:
-   - Descarta las variables CSS. Un `color: var(--x)` se borra y queda
-     la regla vacía. Por eso acá va todo en hexadecimal literal.
-   - Verificar siempre el resultado con `aplicar-css.mjs`, que compara
-     lo enviado contra lo que quedó guardado.
-
-   Paleta:
-     crema        #F5E7C6      verde oscuro  #1E2A1E
-     crema oscuro #EFE0B8      verde medio   #3E5B40
-     gin #5B7141  ron #A9631F  espumante #6E9A6B
-   ============================================================ */
-
+/* ZELVA — compact brand layer for Tiendanube Morelia.
+   Source of truth: migracion/theme/zelva-brand.css
+   Apply only through Diseño > Edición avanzada de CSS. */
 @import url('https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;0,6..72,700;1,6..72,400&family=Archivo:wght@400;500;600;700&display=swap');
 
-/* ---------- Base ---------- */
-body {
-  background-color: #F5E7C6;
-  color: #1E2A1E;
-  font-family: 'Archivo', sans-serif;
-  -webkit-font-smoothing: antialiased;
-}
-
+/* Foundation */
+body { background-color: #F5E7C6; color: #1E2A1E; font-family: 'Archivo', sans-serif; -webkit-font-smoothing: antialiased; }
 ::selection { background-color: #1E2A1E; color: #F5E7C6; }
-
-/* ---------- Tipografía ----------
-   Títulos en Newsreader peso 500, nunca bold: es lo que da el tono
-   editorial del diseño original. */
-h1, h2, h3, h4, .h1, .h2, .h3,
-.section-title, .product-name, .page-title {
-  font-family: 'Newsreader', serif;
-  font-weight: 500;
-}
-
+h1, h2, h3, h4, .h1, .h2, .h3, .section-title, .product-name, .page-title { font-family: 'Newsreader', serif; font-weight: 500; }
 h1 { line-height: 1.06; }
-
-/* ---------- Enlaces ---------- */
 a { color: #3E5B40; text-decoration: none; }
 a:hover { color: #1E2A1E; }
 
-/* ---------- Botones: pill, uppercase, tracking ----------
-   La firma visual más reconocible del diseño original. */
-.btn, button, input[type="submit"], .button {
-  border-radius: 999px;
-  text-transform: uppercase;
-  font-size: 13px;
-  letter-spacing: 0.08em;
-  font-weight: 600;
-  font-family: 'Archivo', sans-serif;
-  padding: 14px 30px;
-}
-
-.btn-primary, .btn-default, .js-addtocart, .btn-cart {
-  background-color: #1E2A1E;
-  border-color: #1E2A1E;
-  color: #F5E7C6;
-}
-
-.btn-primary:hover, .js-addtocart:hover {
-  background-color: #3E5B40;
-  border-color: #3E5B40;
-}
-
-.btn-secondary, .btn-outline {
-  background-color: transparent;
-  border: 1.5px solid #1E2A1E;
-  color: #1E2A1E;
-}
-
-/* ---------- Encabezado ---------- */
-.header, .navbar, header {
-  background-color: #F5E7C6;
-  border-bottom: 1px solid #E0D3B4;
-}
-
-/* ---------- Tarjetas de producto ---------- */
-.item, .product-item, .card {
-  border-radius: 16px;
-  background-color: transparent;
-}
-
-.item-price, .product-price, .price {
-  font-weight: 600;
-  font-family: 'Archivo', sans-serif;
-}
-
-/* ---------- Formularios ---------- */
-input, textarea, select {
-  border-radius: 10px;
-  border: 1px solid #C4CBC4;
-  font-family: 'Archivo', sans-serif;
-  background-color: #FFFFFF;
-  color: #1E2A1E;
-}
-
+/* Buttons and fields */
+.btn, input[type="submit"], .button { border-radius: 999px; text-transform: uppercase; font: 600 13px 'Archivo', sans-serif; letter-spacing: .08em; padding: 14px 30px; }
+.btn-primary, .btn-default, .js-addtocart, .btn-cart, .template-contact .btn-primary { background-color: #1E2A1E !important; border-color: #1E2A1E !important; color: #F5E7C6 !important; }
+.btn-primary:hover, .js-addtocart:hover { background-color: #3E5B40 !important; border-color: #3E5B40 !important; }
+.btn-secondary, .btn-outline { background-color: transparent; border: 1.5px solid #1E2A1E; color: #1E2A1E; }
+input, textarea, select { border-radius: 10px; border: 1px solid #C4CBC4; font-family: 'Archivo', sans-serif; color: #1E2A1E; }
 input:focus, textarea:focus, select:focus { border-color: #1E2A1E; }
 
-.newsletter input[type="email"], .newsletter input[type="text"] {
-  border-radius: 999px;
-  background-color: #F5E7C6;
-  padding: 15px 18px;
-}
-
-/* ---------- Pie de página ---------- */
-footer, .footer {
-  background-color: #1E2A1E;
-  color: #F5E7C6;
-}
-
-footer a, .footer a { color: #F5E7C6; opacity: 0.85; }
+/* Header and footer */
+header, .header, .navbar, .head-main { background-color: #F5E7C6 !important; border-bottom: 1px solid #E0D3B4; }
+footer, .footer { background-color: #1E2A1E; color: #F5E7C6; }
+footer a, .footer a { color: #F5E7C6; opacity: .85; }
 footer a:hover, .footer a:hover { opacity: 1; }
-
-/* T-075 — navegación: Productos, Recetario, Contacto. */
-.nav-desktop-list { display: flex; }
-.nav-desktop-list > li:nth-child(2) { order: 1; }
-.nav-desktop-list > li:nth-child(3) { order: 2; }
-.nav-desktop-list > li:nth-child(8) { order: 3; }
-.nav-desktop-list > li:nth-child(4) { order: 4; }
-.nav-desktop-list > li:nth-child(9) { order: 5; }
-.nav-desktop-list > li:nth-child(5) { order: 6; }
-.nav-desktop-list > li:nth-child(6) { order: 7; }
-.nav-desktop-list > li:nth-child(7) { order: 8; }
-.nav-list { display: flex; flex-direction: column; }
-.nav-list > li:nth-child(1) { order: 1; }
-.nav-list > li:nth-child(2) { order: 2; }
-.nav-list > li:nth-child(7) { order: 3; }
-.nav-list > li:nth-child(3) { order: 4; }
-.nav-list > li:nth-child(8) { order: 5; }
-.nav-list > li:nth-child(4) { order: 6; }
-.nav-list > li:nth-child(5) { order: 7; }
-.nav-list > li:nth-child(6) { order: 8; }
-.item-with-subitems .nav-dropdown-content,
-.item-with-subitems .nav-list-arrow,
-.item-with-subitems .js-nav-list-toggle { display: none; }
-
-/* T-075 — pie: ocultar solo el email público, no el email de la cuenta. */
+/* Keep the user-requested public email removal without hiding footer navigation. */
 footer .contact-link, .footer .contact-link { display: none; }
+.template-contact .row.justify-content-center > .col-md-6 > .text-center > ul.list.mb-4 { display: none; }
+@media (max-width: 767px) { footer .nav-list a { display: block; min-height: 44px; padding: 12px 0; } }
 
-/* Newsletter: fondo oscuro y controles con contraste WCAG. */
-.home-newsletter, .newsletter, .section-newsletter {
-  background-color: #142016;
-  color: #FFFFFF;
-}
-.home-newsletter h2, .home-newsletter p,
-.newsletter h2, .newsletter p,
-.section-newsletter h2, .section-newsletter p { color: #FFFFFF; }
-.newsletter input[type="email"], .newsletter input[type="text"],
-.home-newsletter input[type="email"], .home-newsletter input[type="text"] {
-  background-color: #FFFFFF;
-  border: 2px solid #FFFFFF;
-  color: #142016;
-}
-.newsletter input::placeholder, .home-newsletter input::placeholder { color: #465249; opacity: 1; }
-.newsletter button, .home-newsletter button,
-.newsletter input[type="submit"], .home-newsletter input[type="submit"] {
-  background-color: #F5E7C6;
-  border-color: #F5E7C6;
-  color: #142016;
-}
+/* One green system for both newsletter locations. */
+.section-newsletter-home { position: relative; z-index: 0; background-color: #1E2A1E !important; padding: 44px 0 !important; }
+.section-newsletter-home::before { content: ""; position: absolute; z-index: -1; top: 0; right: -100vw; bottom: 0; left: -100vw; background-color: #1E2A1E; }
+.section-newsletter-home-colors, .section-newsletter-home .col-md-6, .section-newsletter-home .newsletter, footer .newsletter { background-color: transparent !important; color: #F5E7C6 !important; }
+.section-newsletter-home .newsletter { max-width: 460px; padding: 0; }
+.newsletter .input-append { display: flex; align-items: stretch; overflow: hidden; background: #F5E7C6; border: 1px solid #F5E7C6; border-radius: 999px; }
+.newsletter .input-append .form-control { min-height: 48px; background: #F5E7C6 !important; border: 0 !important; color: #1E2A1E !important; }
+.newsletter .input-append .newsletter-btn, .newsletter .input-append input[type="submit"] { background: #F5E7C6 !important; border: 0 !important; border-left: 1px solid #C8B88F !important; color: #1E2A1E !important; }
+.newsletter .input-append .form-control::placeholder { color: #5C625B !important; opacity: 1; }
 
-/* Grilla: espacio estable y botella completa, incluso Sparkling Rosé. */
-.item-image, .item-image-container, .product-item-image-container,
-.js-product-item-image-link-private {
-  aspect-ratio: 1 / 1;
-  min-height: 240px;
-}
-.product-item-image, .item-image img, .item-image-container img,
-.js-product-item-image-link-private img {
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-  object-position: center;
-}
+/* Product grid: stable image boxes until correctly cropped source images are supplied. */
+.item-image, .item-image-container, .product-item-image-container, .js-product-item-image-link-private { aspect-ratio: 1 / 1; min-height: 240px; }
+.product-item-image, .item-image img, .item-image-container img, .js-product-item-image-link-private img { width: 100%; height: 100%; object-fit: contain; object-position: center; }
 
-/* Contacto: aire visible bajo el mensaje de confirmación. */
-.contact-page .alert-success, .page-contact .alert-success,
-.contact-page .contact-form-success, .page-contact .contact-form-success {
-  margin-bottom: 32px;
-  padding-bottom: 24px;
-}
+/* Product quantity control: all three controls fit in one aligned row. */
+.form-quantity.form-quantity-product { display: flex !important; flex-wrap: nowrap !important; align-items: center !important; width: 114px !important; min-width: 114px; height: 42px; }
+.form-quantity.form-quantity-product .form-quantity-icon { display: grid; flex: 0 0 35px; place-items: center; width: 35px; min-width: 35px; height: 42px; padding: 0; }
+.form-quantity.form-quantity-product .form-control-container { flex: 0 0 44px; width: 44px; min-width: 44px; }
+.form-quantity.form-quantity-product .js-quantity-input { width: 44px; min-width: 44px; height: 42px; padding-right: 4px; padding-left: 4px; text-align: center; }
 
-/* Recetario y FAQ: componentes propios sobre la estructura nativa. */
-.zelva-recetario, .zelva-faq { max-width: 1080px; margin: 0 auto; color: #1E2A1E; }
-.zr-intro, .zf-intro { max-width: 680px; font-size: 18px; line-height: 1.6; }
-.zr-index { display: flex; flex-wrap: wrap; gap: 10px; margin: 24px 0 48px; }
-.zr-index a, .zr-cta { display: inline-block; border-radius: 999px; padding: 12px 20px; font-weight: 600; }
-.zr-index a { border: 1px solid #3E5B40; }
-.zr-product { padding: 38px 0; border-top: 1px solid #D8C9A6; }
-.zr-heading { display: flex; align-items: center; gap: 16px; margin-bottom: 22px; }
-.zr-icon { display: grid; place-items: center; width: 56px; height: 56px; border-radius: 50%; background: #1E2A1E; color: #F5E7C6; font: 500 28px 'Newsreader', serif; }
-.zr-kicker, .zr-serve { margin: 0; color: #3E5B40; font-size: 13px; letter-spacing: .06em; text-transform: uppercase; }
-.zr-heading h2 { margin: 2px 0 0; font-size: 38px; }
-.zr-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px; }
-.zr-card { padding: 24px; border: 1px solid #D8C9A6; border-radius: 18px; background: #FFF9EA; }
-.zr-card h3 { margin: 0 0 6px; font-size: 26px; }
-.zr-card h4 { margin: 20px 0 5px; font: 600 12px 'Archivo', sans-serif; letter-spacing: .08em; text-transform: uppercase; }
-.zr-card p { line-height: 1.55; }
-.zr-garnish { padding-top: 14px; border-top: 1px solid #E7DCC2; }
-.zr-cta { margin-top: 22px; background: #1E2A1E; color: #F5E7C6; text-transform: uppercase; letter-spacing: .06em; }
-.zelva-faq details { border-top: 1px solid #D8C9A6; padding: 20px 0; }
-.zelva-faq details:last-child { border-bottom: 1px solid #D8C9A6; }
-.zelva-faq summary { cursor: pointer; font: 500 22px 'Newsreader', serif; }
-.zelva-faq details p { max-width: 820px; margin: 14px 0 0; line-height: 1.6; }
-@media (max-width: 767px) {
-  .zr-grid { grid-template-columns: 1fr; }
-  .zr-product { padding: 30px 0; }
-  .zr-heading h2 { font-size: 32px; }
-  .item-image, .item-image-container, .product-item-image-container,
-  .js-product-item-image-link-private { min-height: 180px; }
-}
+/* Contact */
+.template-contact .contact-form .form-control, .template-contact form.js-winnie-pooh-form .form-control { background: #FFFDF7 !important; border: 1.5px solid #E1D1AA !important; color: #1E2A1E !important; }
+.template-contact .contact-form .form-control::placeholder, .template-contact form.js-winnie-pooh-form .form-control::placeholder { color: #667064 !important; opacity: 1; }
+.contact-page .alert-success, .page-contact .alert-success, .contact-page .contact-form-success, .page-contact .contact-form-success { margin-bottom: 32px; padding-bottom: 24px; }
 
-/* ============================================================
-   PENDIENTE — necesita iteración visual contra el prototipo, y
-   varias cosas son estructura (secciones del theme), no color:
-   - Barra de anuncios superior (envíos / cuotas / transferencia)
-   - Hero con texto a la izquierda e imagen a la derecha
-   - Barra verde de 4 beneficios bajo el hero
-   - Acentos por categoría (gin / ron / espumante) en las tarjetas
-   - Botón flotante de WhatsApp con animación de pulso
-   ============================================================ */
+/* Recetario */
+.zelva-recetario { max-width: 960px; margin: 0 auto; padding: 44px 20px 76px; color: #1E2A1E; }
+.zr-eyebrow, .zr-kicker, .zr-serve { margin: 0; color: #3E5B40; font: 600 12px 'Archivo', sans-serif; letter-spacing: .12em; text-transform: uppercase; }
+.zr-title { max-width: 680px; margin: 10px 0 14px; font-size: 48px; line-height: 1.04; }
+.zr-intro { max-width: 580px; margin: 0; font-size: 18px; line-height: 1.6; }
+.zr-index { display: flex; flex-wrap: wrap; gap: 10px; margin: 30px 0 56px; }
+.zr-index a { display: inline-block; padding: 10px 16px; border: 1px solid #769078; border-radius: 999px; color: #1E2A1E; font: 600 12px 'Archivo', sans-serif; letter-spacing: .06em; text-transform: uppercase; }
+.zr-product { padding: 52px 0 56px; border-top: 1px solid #D8C9A6; }
+.zr-heading { display: flex; align-items: center; gap: 15px; margin-bottom: 28px; }
+.zr-icon { display: grid; place-items: center; width: 52px; height: 52px; border-radius: 50%; background: #1E2A1E; color: #F5E7C6; font: 500 27px 'Newsreader', serif; }
+.zr-rum .zr-icon { background: #70451D; }.zr-white .zr-icon { background: #567855; }.zr-rose .zr-icon { background: #925C65; }
+.zr-heading h2 { margin: 3px 0 0; font-size: 46px; line-height: 1; }
+.zr-grid { display: grid !important; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 22px; }
+.zr-card { display: block !important; min-width: 0; padding: 28px; border: 1px solid #D8C9A6; border-radius: 16px; background: #FFF9EA; }
+.zr-card h3 { margin: 0 0 7px; font-size: 29px; line-height: 1.08; }.zr-card h4 { margin: 22px 0 6px; font: 600 11px 'Archivo', sans-serif; letter-spacing: .1em; text-transform: uppercase; }.zr-card p { margin: 0; line-height: 1.58; }.zr-card h4 + p { color: #344037; }
+.zr-garnish { margin-top: 18px !important; padding-top: 15px; border-top: 1px solid #E5D9C0; }.zr-cta { display: inline-block; margin-top: 24px; padding: 13px 19px; border-radius: 999px; background: #1E2A1E; color: #F5E7C6; font: 600 12px 'Archivo', sans-serif; letter-spacing: .08em; text-transform: uppercase; }
+@media (min-width: 768px) { .zelva-recetario { width: 150%; max-width: 990px; } }
+@media (max-width: 767px) { .item-image, .item-image-container, .product-item-image-container, .js-product-item-image-link-private { min-height: 180px; }.zelva-recetario { padding: 32px 15px 56px; }.zr-title { font-size: 42px; }.zr-product { padding: 40px 0; }.zr-heading h2 { font-size: 34px; }.zr-grid { grid-template-columns: 1fr; gap: 15px; }.zr-card { padding: 24px; } }
+
+
+/* Editorial content pages — same vocabulary as the published Recetario. */
+.zelva-editorial { max-width: 960px; margin: 0 auto; padding: 44px 20px 76px; color: #1E2A1E; }
+.zelva-editorial .ze-lede { max-width: 680px; margin: 0; font-size: 18px; line-height: 1.6; }
+.zelva-editorial .ze-section { padding: 44px 0; border-top: 1px solid #D8C9A6; }
+.zelva-editorial .ze-section h2 { margin: 0 0 12px; font-size: 38px; line-height: 1.08; }
+.zelva-editorial .ze-section > p { max-width: 760px; margin: 0; line-height: 1.65; }
+.zelva-editorial .ze-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px; }
+.zelva-editorial .ze-card { padding: 24px; border: 1px solid #D8C9A6; border-radius: 16px; background: #FFF9EA; }
+.zelva-editorial .ze-card h3 { margin: 0 0 9px; font-size: 25px; line-height: 1.12; }
+.zelva-editorial .ze-card p { margin: 0; line-height: 1.58; }
+.zelva-editorial .ze-steps { display: grid; gap: 15px; max-width: 760px; }
+.zelva-editorial .ze-step { padding: 18px 0; border-top: 1px solid #E5D9C0; }
+.zelva-editorial .ze-step h3 { margin: 0 0 7px; font-size: 24px; }
+.zelva-editorial .ze-step p { margin: 0; line-height: 1.6; }
+@media (min-width: 768px) { .zelva-editorial { width: 150%; max-width: 990px; } }
+@media (max-width: 767px) { .zelva-editorial { padding: 32px 15px 56px; }.zelva-editorial .ze-section { padding: 36px 0; }.zelva-editorial .ze-section h2 { font-size: 32px; }.zelva-editorial .ze-grid { grid-template-columns: 1fr; } }
