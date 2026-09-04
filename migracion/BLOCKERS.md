@@ -35,7 +35,7 @@ RDAP, CT, y fetch directo de la página — sin login):
 | Dato | Valor en el prototipo | Estado real (2026-09-03) |
 |---|---|---|
 | WhatsApp | `5491155555555` | **Sigue sin resolver.** No aparece en el HTML público (solo el ícono SVG del theme, sin link activo). Necesito número real. |
-| Email | `hola@zelva.com.ar` | **Resuelto.** `zelva.bebidas@gmail.com`, encontrado en el footer en vivo de `byzelva.com` (ofuscado por Cloudflare, decodificado). No es un email corporativo del dominio propio — no hay MX en `byzelva.com`. |
+| Email | `hola@zelva.com.ar` | **No se publica por ahora.** `zelva.bebidas@gmail.com` se retiró del footer el 2026-09-03 por pedido del usuario. El email de la cuenta no se modificó. |
 | Instagram | `instagram.com/zelva` | **Resuelto.** Handle real: `instagram.com/ByZelva.co`, tomado del HTML en vivo. |
 | Dominio | — | **Resuelto, y no es el que se esperaba.** Juan compró y conectó **`byzelva.com`** (.com, no `.com.ar` como se especulaba acá). Registrado el 2026-09-03 vía Tucows, whois privado (sin titular visible). `www.byzelva.com` hace CNAME a `tiendadejuanguitou.mitiendanube.com` — es la tienda real de este proyecto, confirmado por cookie de sesión con el ID de tienda (`007919099`), `og:site_name: Zelva` y la paleta de marca exacta de `identidad-visual.md` aplicada en vivo. |
 
@@ -166,9 +166,8 @@ Para vender kits hacen falta fotos reales del kit armado.
 
 ## 8. Contenido a validar antes de publicar
 
-- [ ] **FAQ sobre embarazo.** En el prototipo dice literal
-      `[Placeholder — requiere validación]`. Es una pregunta con implicancias de salud:
-      o se redacta con respaldo profesional, o se elimina. No la voy a inventar.
+- [x] **FAQ sobre embarazo eliminada del alcance público (2026-09-03).** La FAQ nueva no
+      contiene preguntas, respuestas ni referencias sobre embarazo.
 - [ ] **"+15 premios en concursos internacionales"** (sección de la marca ISH). Es un dato
       duro y verificable: hay que confirmarlo o sacarlo.
 - [ ] **"Fundada en 2018, pionera de la categoría"** — mismo criterio.

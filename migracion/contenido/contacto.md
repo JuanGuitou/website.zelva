@@ -26,8 +26,10 @@ Contacto
 
 **Botón:** Enviar mensaje
 
-**Mensaje de éxito:**
-> ¡Gracias por escribirnos! Te respondemos a la brevedad.
+**Mensaje de éxito nativo:**
+> ¡Gracias por contactarnos! Vamos a responderte apenas veamos tu mensaje.
+
+La capa de marca agrega 24 px de padding y 32 px de margen inferior al bloque de éxito.
 
 ---
 

@@ -40,6 +40,20 @@ reales encontrados **desde el último commit de este repo (`fb538b3`, 2026-07-31
 
 ---
 
+## ✅ Actualización 2026-09-03 — T-075 implementado en Morelia
+
+Cambios guardados y publicados desde el admin, sin fork, FTP ni apps:
+
+- Páginas creadas: `/recetario/` y `/preguntas-frecuentes/`.
+- Navegación visible: Productos → Recetario → Contacto. Productos enlaza a `/productos/` y
+  su submenú se oculta; las páginas de categoría no se modificaron.
+- FAQ publicada con procesos específicos por producto y sin referencias a embarazo.
+- Email público `zelva.bebidas@gmail.com` oculto en el footer. El email de cuenta no cambió.
+- CSS publicado: newsletter oscuro con contraste alto, área de imagen de producto estable
+  (240 px en escritorio, 180 px en móvil) y `object-fit: contain`, más espacio tras la
+  confirmación de Contacto.
+- Evidencia visual: `migracion/qa-t075/` (desktop y móvil). La tienda conserva la contraseña.
+
 ## Qué hay hoy
 
 | | Estado |
