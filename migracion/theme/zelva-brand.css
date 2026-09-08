@@ -90,3 +90,9 @@ footer .contact-link, .footer .contact-link { display: none; }
 .zelva-editorial .ze-step p { margin: 0; line-height: 1.6; }
 @media (min-width: 768px) { .zelva-editorial { width: 150%; max-width: 990px; } }
 @media (max-width: 767px) { .zelva-editorial { padding: 32px 15px 56px; }.zelva-editorial .ze-section { padding: 36px 0; }.zelva-editorial .ze-section h2 { font-size: 32px; }.zelva-editorial .ze-grid { grid-template-columns: 1fr; } }
+
+
+/* User-directed navigation: Products opens the complete catalog only. */
+.item-with-subitems .nav-dropdown-content,
+.item-with-subitems .nav-list-arrow,
+.item-with-subitems .js-nav-list-toggle { display: none !important; }
